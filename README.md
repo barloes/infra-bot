@@ -19,3 +19,8 @@
 - Part 3
     - Deployment of services using kubernetes
 
+# Testing
+
+export TF_LOG=JSON
+
+docker run --rm -it --name terraform -v $(pwd):/terraform -w /workspace 

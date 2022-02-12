@@ -1,0 +1,4 @@
+flask==2.0.2
+python-terraform==0.10.1
+awscli
+boto3
