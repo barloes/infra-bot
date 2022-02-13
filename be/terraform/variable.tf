@@ -1,4 +1,6 @@
-variable "ENDPOINT" {
-  type    = string
-  default = "http://google.com"
+variable "project_list" {
+  type = list(object({
+    _id  = string
+    data = string
+  }))
 }
