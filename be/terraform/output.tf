@@ -1,7 +1,6 @@
-# output "http_res" {
-#   value = jsondecode(data.http.example.body).name
-# }
-
-output "project_list" {
-  value = var.project_list
+output "vpc_id" {
+  value = module.vpc.vpc_id
 }
+# output "subnet_id" {
+#   value = module.vpc.subnet_id
+# }

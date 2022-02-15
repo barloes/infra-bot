@@ -1,7 +1,7 @@
 resource "aws_security_group" "main" {
   name        = "${var.project_name}_sg"
   description = "default sg"
-  # vpc_id      = aws_vpc.main.id
+  vpc_id      = var.vpc_id
 
   ingress {
     description = "http"

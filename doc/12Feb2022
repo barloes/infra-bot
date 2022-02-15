@@ -1,2 +1,0 @@
-flask will maintain terraform infra no. through mongodb
-flask request will modify and create infra if not found in mongodb
