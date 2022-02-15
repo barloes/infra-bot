@@ -38,9 +38,9 @@ sudo apt-get install \
     docker-ce-cli \
     containerd.io -y
 
-sudo curl -L "https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-linux-aarch64" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-linux-x86_64" -o /usr/local/bin/docker-compose
 sudo chmod +rwx /usr/local/bin/docker-compose
-
+sudo chmod 666 /var/run/docker.sock
 sudo service docker start
 
 cd ~
@@ -50,7 +50,7 @@ aws s3 cp s3://${NAME}/${PROJECT_NAME}.tar.gz ./${PROJECT_NAME}.tar.gz
 
 tar -xvf ${PROJECT_NAME}.tar.gz
 
-sudo aws ecr get-login-password --region $AZ | docker login --username AWS --password-stdin ${AWS_ID}
+sudo aws ecr get-login-password --region ${AZ} | docker login --username AWS --password-stdin ${AWS_ID}
 docker pull ${AWS_ID}/${NAME}:${PROJECT_NAME}
 
 docker-compose build && docker-compose up -d

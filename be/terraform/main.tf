@@ -15,8 +15,8 @@ provider "aws" {
 locals {
   name          = "junhui-infra-bot"
   key_name      = "cicd"
-  ami_id        = "ami-03d20fc12884694ee"
-  instance_type = "t4g.nano"
+  ami_id        = "ami-055d15d9cfddf7bd3"
+  instance_type = "t3.nano"
   ecr_name      = "junhuiimage"
   az            = "ap-southeast-1a"
 }

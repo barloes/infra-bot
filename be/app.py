@@ -7,7 +7,7 @@ import os
 
 MONGODB_URL = os.getenv("MONGODB_URL")
 
-mongo_client = MongoClient(f"{MONGODB_URL}")
+mongo_client = MongoClient(f"mongodb://root:example@172.17.0.1:27017/")
 db = mongo_client["db"]
 collection = db["project"]
 
@@ -35,7 +35,7 @@ def tf_apply(data):
 
 
 @app.route("/tf")
-def hello_world():
+def apply():
 
     project_list = list(collection.find({}))
     var = {"project_list": project_list}
@@ -48,15 +48,6 @@ def hello_world():
 
 @app.route("/add")
 def add():
-    project = request.args.get("project")
-    if project:
-        create_project(project)
-
-    return jsonify({"msg": str("done")})
-
-
-@app.route("/update")
-def update():
     project = request.args.get("project")
     if project:
         create_project(project)

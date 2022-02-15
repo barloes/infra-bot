@@ -42,15 +42,8 @@ export TF_LOG=JSON
 
 # docker-compose method (testing)
 
-sudo chmod -R 755 .
-touch backup.tar.gz
-tar --exclude='.git/*' --exclude='./be/terraform/.terraform/*' --exclude='backup.tar.gz' --exclude='data' -zcvf backup.tar.gz .
-
-tar -xvf backup.tar.gz
-
 ```
-mkdir .github/workflows
-touch .github/workflows/action.yml
+python3 -m websockets ws://localhost:8765/
 ```
 
 ```
