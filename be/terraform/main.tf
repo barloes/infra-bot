@@ -16,7 +16,7 @@ locals {
   name          = "junhui-infra-bot"
   key_name      = "cicd"
   ami_id        = "ami-055d15d9cfddf7bd3"
-  instance_type = "t3.nano"
+  instance_type = "t3.small"
   ecr_name      = "junhuiimage"
   az            = "ap-southeast-1a"
 }
